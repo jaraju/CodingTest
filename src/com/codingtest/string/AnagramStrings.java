@@ -6,7 +6,7 @@ import java.util.Map;
 public class AnagramStrings {
 	public static void main(String args[]) {
 		System.out.println(isAnagram("tar", "rat"));
-		System.out.println(isAnagram("arc", "car"));
+		/*System.out.println(isAnagram("arc", "car"));
 		System.out.println(isAnagram("elbow", "below"));
 		System.out.println(isAnagram("state", "taste"));
 		System.out.println(isAnagram("cider", "cried"));
@@ -21,7 +21,7 @@ public class AnagramStrings {
 		System.out.println(isAnagram("stressed", "desserts"));
 		System.out.println("-------------------------------");
 		System.out.println(isAnagram("tar", "ratt"));
-		System.out.println(isAnagram("darc", "car"));
+		System.out.println(isAnagram("barc", "car"));
 		System.out.println(isAnagram("elebow", "below"));
 		System.out.println(isAnagram("statett", "taste"));
 		System.out.println(isAnagram("cider", "curied"));
@@ -34,8 +34,27 @@ public class AnagramStrings {
 		System.out.println(isAnagram("savde", "vase"));
 		System.out.println(isAnagram("anvvvgel", "glean"));
 		System.out.println(isAnagram("stressed", "dessertsk"));
+		*/ 
 	}
 	
+	static boolean isAnagram(String a, String b) {
+		if (a.length() != b.length())
+			return false;
+		a = a.toLowerCase();
+		b = b.toLowerCase();
+
+		int[] temp = new int[Character.MAX_VALUE];
+		int summ = 0;
+
+		for (int i = 0; i < a.length(); i++) {
+			summ += ++temp[a.charAt(i)] <= 0 ? -1 : 1;
+			summ += --temp[b.charAt(i)] >= 0 ? -1 : 1;
+		}
+		return summ == 0;
+
+	}
+	
+	/*
 	private static boolean isAnagram(String string, String string2) {
 
 		if (string.length() == string2.length()) {
@@ -52,7 +71,7 @@ public class AnagramStrings {
 			return string2.isEmpty();
 		}
 		return false;
-	}
+	}*/
 	/*
 	public static boolean  isAnagram(String s1, String s2) {
 		System.out.print(s1+" - "+s2+ " : ");
