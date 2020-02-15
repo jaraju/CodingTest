@@ -11,7 +11,6 @@ public class AllDigitsOrNot {
 			if (!Character.isDigit(input.charAt(index)))
 				return false;
 		}
-
 		return true;
 	}
 
