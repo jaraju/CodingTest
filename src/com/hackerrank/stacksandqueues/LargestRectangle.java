@@ -6,9 +6,11 @@ import java.util.LinkedList;
 public class LargestRectangle {
 
 	public static void main(String[] args) {
-		int input[] = { 2, 1, 2 };
+		//int input[] = { 2, 1, 2 };
+		//System.out.println(largestRectangle(input));
 
-		System.out.println(largestRectangle(input));
+		int input2[] = { 6, 2, 5, 4, 5, 1, 6 };
+		System.out.println(largestRectangle(input2));
 	}
 
 	static long largestRectangle(int[] h) {
